@@ -16,8 +16,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Build and Push Docker Image
-        uses: mr-smithers-excellent/docker-build-push@v4
+      - name: Docker Build & Push Action
+        uses: mr-smithers-excellent/docker-build-push@v5.9
         with:
           image: vedantd0cker/my-docker_repo
           registry: docker.io
