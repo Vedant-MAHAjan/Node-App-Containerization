@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/profile-picture', function (req, res) {
-  let img = fs.readFileSync(path.join(__dirname, "images/profile-1.jpg"));
+  let img = fs.readFileSync(path.join(__dirname, "images/images.png"));
   res.writeHead(200, { 'Content-Type': 'image/jpg' });
   res.end(img, 'binary');
 });
@@ -25,19 +25,16 @@ app.get('/profile-picture', function (req, res) {
 // the IP address field in the db URL can be replaced by the container name itself
 // hence @localhost and @mongodb is used in the URL
 
-// use when starting application locally
-// let mongoUrlLocal = "mongodb://admin:password@localhost:27017";
-// use when custom image is pulled from AWS repository
 let mongoUrlLocal = "mongodb://admin:password@mongodb:27017";
 // mongodb://0.0.0.0:27017
 
 // use when starting application as docker container
 let mongoUrlDocker = "mongodb://admin:password@mongodb";
 
-// pass these options to mongo client connect request to avoid DeprecationWarning for current Server Discovery and Monitoring engine
+// mongoose configurations
 let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
-// "user-account" in demo with docker. "my-db" in demo with docker-compose
+// my-db database created when a post request is sent to MongoDB
 let databaseName = "my-db";
 
 app.post('/update-profile', function (req, res) {

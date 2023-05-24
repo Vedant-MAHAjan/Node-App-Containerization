@@ -1,3 +1,6 @@
+# Docker-compsose file having 3 containers 
+# 1st is the node applcation, 2nd is mongodb and 3rd is mongo-express
+
 # "docker-compose -f docker-compose.yaml up -d"
 # this will execute the docker compose file 
 # up denotes starting the containers
@@ -5,12 +8,12 @@
 
 version: '3'
 services:
-  my-app: 
-    image: my-app
+  my-app:   
+    image: my-app # mentions the exact image using which the container will be running
     ports:
       - 3000:3000
     volumes:
-      - E:\Container\NanaProject\techworld-js-docker-demo-app\app:/home/app
+      - <path_of_directory>:/home/app
   mongodb:
     image: mongo
     ports:
@@ -18,8 +21,9 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
-    # volumes:
-    #   - mongo-data:/data/db
+    # volumes used to persist data of the database
+    volumes:
+      - mongo-data:/data/db
   mongo-express:
     image: mongo-express
     restart: always # fixes MongoNetworkError when mongodb is not ready when mongo-express starts
@@ -29,6 +33,7 @@ services:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
-# volumes:
-#   mongo-data:
-#     driver: local
+# all the volumes used are listed here
+volumes:
+  mongo-data:
+    driver: local
