@@ -63,3 +63,33 @@ The dot "." at the end of the command denotes location of the Dockerfile.
 Step 5: access the nodejs application from browser 
 
     http://localhost:3000
+    
+## Node Application
+
+### Default profile
+    
+![image](https://github.com/Vedant-MAHAjan/Node-App-Containerization/assets/88843623/fead9ef4-33fb-4060-92c1-e68d8e6ee591)
+
+### Updated profile
+
+![image](https://github.com/Vedant-MAHAjan/Node-App-Containerization/assets/88843623/071f8b1e-a9a0-4823-9268-ce9c94dd7dbf)
+
+## MongoDB Database 
+
+### Before updating the profile
+
+![image](https://github.com/Vedant-MAHAjan/Node-App-Containerization/assets/88843623/4d1d415c-116d-4ec0-867d-403cf2d7e136)
+
+### After updating the profile
+
+* New Database created
+* New Collection created
+* Entry of the updated profile added
+
+![image](https://github.com/Vedant-MAHAjan/Node-App-Containerization/assets/88843623/66c412fd-a27b-4359-9c53-c9e995582d25)
+
+* Click on the "my-db" database
+* Click on the "users" collection
+* The updated profile data will be stored
+
+
